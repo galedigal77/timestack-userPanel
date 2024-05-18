@@ -1,7 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "../api/axios";
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    setError("");
+    try {
+      const response = await axios.post("/users/login", { email, password });
+
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+
+      setEmail("");
+      setPassword("");
+      navigate("/dashboard");
+    } catch (e) {
+      if (e.response && e.response.status === 401) {
+        setError("Incorrect email or password.");
+      } else {
+        setError("An error occurred. Please try again.");
+      }
+    }
+  };
+
   return (
     <section className="bg-[#F4F7FF] py-20 lg:py-[120px]">
       <div className="container mx-auto">
@@ -22,11 +49,21 @@ export const Login = () => {
                 md:px-[60px]
                 "
             >
-              <div className="mb-10 text-center md:mb-16">TimeStack</div>
-              <form>
+              <div className="mb-10 text-center md:mb-16">
+                <img
+                  src="/images/timestack-logo.png"
+                  alt="Logo"
+                  style={{ width: "100px", height: "auto" }}
+                  className="mx-auto mb-4"
+                />
+              </div>
+              {error && <div className="mb-4 text-red-500">{error}</div>}
+              <form onSubmit={handleLogin}>
                 <div className="mb-4">
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                     className="
                         border-[#E9EDF4]
@@ -43,13 +80,12 @@ export const Login = () => {
                         focus-visible:shadow-none
                         "
                   />
-                  <div className="flex">
-                    <span className="text-red-400 text-sm m-2 p-2">error</span>
-                  </div>
                 </div>
                 <div className="mb-4">
                   <input
                     type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                     className="
                         border-[#E9EDF4]
@@ -66,9 +102,6 @@ export const Login = () => {
                         focus-visible:shadow-none
                         "
                   />
-                  <div className="flex">
-                    <span className="text-red-400 text-sm m-2 p-2">error</span>
-                  </div>
                 </div>
                 <div className="mb-10">
                   <button
@@ -100,7 +133,7 @@ export const Login = () => {
               </Link>
               <p className="text-base text-[#adadad]">
                 Don't have an account yet?&nbsp;
-                <Link to="/register" className="text-primary hover: underline">
+                <Link to="/register" className="text-primary hover:underline">
                   Create an Account
                 </Link>
               </p>
