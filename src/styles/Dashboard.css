@@ -1,0 +1,40 @@
+/* Add custom styles for the Dashboard component */
+.dashboard-container {
+  display: flex;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.container-fluid {
+  padding: 2rem;
+}
+
+.d-sm-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-xl-3,
+.col-md-6 {
+  flex: 1;
+  max-width: 25%;
+  padding: 0.5rem;
+}
