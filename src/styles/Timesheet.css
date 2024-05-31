@@ -1,0 +1,59 @@
+.timesheet-container {
+  padding: 20px;
+  max-width: 1210px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timesheet-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timesheet-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.timesheet-container table,
+.timesheet-container th,
+.timesheet-container td {
+  border: 1px solid #ccc;
+}
+
+.timesheet-container th,
+.timesheet-container td {
+  padding: 8px;
+  text-align: left;
+}
+
+.timesheet-container th {
+  background-color: #f0f0f0;
+}
+
+.timesheet-container input[type="text"],
+.timesheet-container input[type="time"],
+.timesheet-container input[type="week"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.timesheet-container button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.timesheet-container button:hover {
+  background-color: #0056b3;
+}

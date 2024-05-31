@@ -1,0 +1,44 @@
+.payslip-list-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payslip-list-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payslip-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.payslip-list-container table,
+.payslip-list-container th,
+.payslip-list-container td {
+  border: 1px solid #ccc;
+}
+
+.payslip-list-container th,
+.payslip-list-container td {
+  padding: 8px;
+  text-align: left;
+}
+
+.payslip-list-container th {
+  background-color: #f0f0f0;
+}
+
+.payslip-list-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.payslip-list-container a:hover {
+  text-decoration: underline;
+}
