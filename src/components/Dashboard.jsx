@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Card from './Card';
 import Sidebar from './Sidebar';
+import DashboardContent from './DashboardContent';
 import ProfileIcon from './ProfileIcon';
 import TimeTracker from './TimeTracker';
 import Timesheet from './Timesheet';
@@ -12,6 +13,7 @@ import Goals from './Goals';
 import ManageShift from './ManageShift';
 import Help from './Help';
 import AdminAccess from './AdminAccess';
+import Profile from './Profile';
 import '../styles/Dashboard.css';
 
 const Dashboard = ({ title, userCount, leaveBalanceCount }) => {
@@ -19,6 +21,8 @@ const Dashboard = ({ title, userCount, leaveBalanceCount }) => {
 
   const renderActiveMenu = () => {
     switch (activeMenu) {
+      case 'dashboard':
+        return <DashboardContent />;
       case 'time-tracker':
         return <TimeTracker />;
       case 'timesheet':
@@ -36,34 +40,7 @@ const Dashboard = ({ title, userCount, leaveBalanceCount }) => {
       case 'admin-access':
         return <AdminAccess />;
       default:
-        return (
-          <div className="row">
-            <div className="col-xl-3 col-md-6 mb-4">
-              <Link to="/backend/users">
-                <Card
-                  borderClass="border-left-primary"
-                  textClass="text-primary"
-                  title="User"
-                  value={userCount}
-                  iconClass="fas fa-user"
-                  iconColor="text-gray-300"
-                />
-              </Link>
-            </div>
-            <div className="col-xl-3 col-md-6 mb-4">
-              <Link to="#" onClick={() => setActiveMenu('leave')}>
-                <Card
-                  borderClass="border-left-danger"
-                  textClass="text-danger"
-                  title="Leave Balance"
-                  value={leaveBalanceCount}
-                  iconClass="fas fa-user"
-                  iconColor="text-danger"
-                />
-              </Link>
-            </div>
-          </div>
-        );
+        return <DashboardContent />;
     }
   };
 
@@ -78,7 +55,8 @@ const Dashboard = ({ title, userCount, leaveBalanceCount }) => {
           </div>
           <Routes>
             <Route path="/" element={renderActiveMenu()} />
-            <Route path="/payslipdetails/:id" element={<PayslipDetails />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/payslip-details/:id" element={<PayslipDetails />} />
           </Routes>
         </div>
       </div>

@@ -1,0 +1,75 @@
+.dashboard-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.profile-notifications {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bar-chart,
+.doughnut-chart {
+  width: 30%;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.info-card {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.info-card h3 {
+  margin-top: 0;
+}
+
+.info-card .highlight {
+  font-size: 24px;
+  color: #42a5f5;
+}
+
+.info-card button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-card button:hover {
+  background-color: #0056b3;
+}

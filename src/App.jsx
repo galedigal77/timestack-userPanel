@@ -4,7 +4,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import VerifyEmail from "./components/VerifyEmail";
-import Logout from "./components/Logout";
+import Profile from './components/Profile';
+import Logout from './components/Logout';
 
 const App = () => {
   const title = "Dashboard";
@@ -27,6 +28,7 @@ const App = () => {
         }
       />
       <Route path="/verify-email" element={<VerifyEmail />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/logout" element={<Logout />} />
     </Routes>
   );

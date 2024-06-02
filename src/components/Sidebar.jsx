@@ -11,9 +11,9 @@ const Sidebar = ({ setActiveMenu }) => {
           <img src={logo} alt="Logo" className="sidebar-logo" />
         </div>
       </a>
-      <div className="text-center d-none d-md-inline">
+      {/* <div className="text-center d-none d-md-inline">
         <button className="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> */}
       <hr className="sidebar-divider my-0" />
       <li className="nav-item active">
         <Link className="nav-link" to="#" onClick={() => setActiveMenu('dashboard')}>
@@ -73,9 +73,9 @@ const Sidebar = ({ setActiveMenu }) => {
         </Link>
       </li>
       <hr className="sidebar-divider" />
-      <div className="text-center d-none d-md-inline">
+      {/* <div className="text-center d-none d-md-inline">
         <button className="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> */}
     </ul>
   );
 };

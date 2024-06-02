@@ -15,8 +15,8 @@ const ProfileIcon = () => {
             <FaUserCircle size={30} onClick={toggleMenu} className="profile-icon" />
             {menuOpen && (
                 <div className="profile-menu">
-                    <Link to="/profile">Profile</Link>
-                    <Link to="/logout">Logout</Link>
+                    <Link to="/profile" onClick={toggleMenu}>Profile</Link>
+                    <Link to="/logout" onClick={toggleMenu}>Logout</Link>
                 </div>
             )}
         </div>
